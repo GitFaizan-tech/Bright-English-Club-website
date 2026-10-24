@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bright English Club | Speak. Lead. Inspire.</title>
+
+<meta name="description" content="Welcome to Bright English Club. Speak, lead, and inspire through English speaking, debate, presentations, and creative activities.">
+
+<style>
+/* ===== BASIC SETTINGS ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --green: #0b3d2e;
+    --dark: #061f18;
+    --light-green: #176b4a;
+    --white: #ffffff;
+    --cream: #f3f5ef;
+    --gold: #d8c38a;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--cream);
+    color: #17251e;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+/* ===== NAVIGATION ===== */
+
+header {
+    background: var(--dark);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+nav {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 14px;
+    color: #e0e9e3;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: 1px solid #527064;
+    color: white;
+    padding: 7px 12px;
+    border-radius: 6px;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+.join-btn {
+    background: var(--gold);
+    color: var(--dark) !important;
+    padding: 10px 17px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* ===== HERO SECTION ===== */
+
+.hero {
+    min-height: 590px;
+    display: flex;
+    align-items: center;
+    color: white;
+    background:
+        radial-gradient(ellipse at 85% 20%, rgba(37,111,77,0.4), transparent 45%),
+        linear-gradient(135deg, #061f18, #0b3d2e 65%, #123e2c);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "BEC";
+    position: absolute;
+    right: -20px;
+    bottom: -120px;
+    font-size: clamp(180px, 30vw, 420px);
+    font-weight: 900;
+    color: rgba(255,255,255,0.035);
+    pointer-events: none;
+}
+
+.hero-content {
+    max-width: 760px;
+    padding: 90px 0;
+    position: relative;
+    z-index: 1;
+    animation: appear 1s ease;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.12;
+    margin-bottom: 25px;
+    font-weight: normal;
+}
+
+.hero h1 span {
+    color: var(--gold);
+    font-style: italic;
+}
+
+.hero p {
+    max-width: 600px;
+    font-size: 17px;
+    color: #d5e2d9;
+    margin-bottom: 32px;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 23px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: var(--dark);
+}
+
+.btn-outline {
+    border: 1px solid #9aafa1;
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+/* ===== GENERAL SECTIONS ===== */
+
+section {
+    padding: 85px 0;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 45px;
+}
+
+.section-heading .eyebrow {
+    color: var(--light-green);
+    margin-bottom: 10px;
+}
+
+.section-heading h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(30px, 5vw, 45px);
+    color: var(--green);
+    line-height: 1.25;
+    margin-bottom: 16px;
+}
+
+.section-heading p {
+    color: #617066;
+}
+
+/* ===== ABOUT ===== */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.about-art {
+    min-height: 330px;
+    background: linear-gradient(145deg, #0b3d2e, #176b4a);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 30px;
+    box-shadow: 15px 15px 0 #d8c38a;
+}
+
+.about-art .big-quote {
+    font-family: Georgia, serif;
+    font-size: 80px;
+    color: var(--gold);
+    line-height: 1;
+}
+
+.about-art h3 {
+    font-family: Georgia, serif;
+    font-size: 34px;
+    font-weight: normal;
+    margin: 10px 0;
+}
+
+.about-art p {
+    color: #d4e3d8;
+}
+
+.about-text h3 {
+    font-family: Georgia, serif;
+    font-size: 29px;
+    color: var(--green);
+    margin-bottom: 17px;
+}
+
+.about-text p {
+    margin-bottom: 18px;
+    color: #59685e;
+}
+
+.values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.value {
+    background: white;
+    padding: 16px 8px;
+    text-align: center;
+    border-radius: 8px;
+    border-bottom: 3px solid var(--light-green);
+}
+
+.value strong {
+    display: block;
+    color: var(--green);
+}
+
+.value small {
+    color: #68766d;
+}
+
+/* ===== ACTIVITIES ===== */
+
+.activities {
+    background: #e8eee7;
+}
+
+.activity-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.activity-card {
+    background: white;
+    padding: 28px 24px;
+    border-radius: 10px;
+    border: 1px solid #e0e7df;
+    transition: 0.3s;
+}
+
+.activity-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 30px rgba(6,31,24,0.09);
+}
+
+.activity-icon {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: #e5efe6;
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+
+.activity-card h3 {
+    color: var(--green);
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.activity-card p {
+    color: #657168;
+    font-size: 14px;
+}
+
+/* ===== MOTTO ===== */
+
+.motto {
+    background: var(--green);
+    color: white;
+    text-align: center;
+    padding: 75px 20px;
+}
+
+.motto h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(30px, 5vw, 48px);
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+
+.motto h2 span {
+    color: var(--gold);
+}
+
+.motto p {
+    color: #d4e3d8;
+}
+
+/* ===== GALLERY ===== */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.gallery-item {
+    min-height: 200px;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #0b3d2e, #176b4a);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.025);
+}
+
+.gallery-item span {
+    font-size: 37px;
+    margin-bottom: 8px;
+}
+
+.gallery-item h3 {
+    font-family: Georgia, serif;
+    font-size: 21px;
+}
+
+.gallery-item p {
+    font-size: 13px;
+    color: #d8e6dc;
+    margin-top: 5px;
+}
+
+/* ===== JOIN SECTION ===== */
+
+.join-section {
+    background: #e8eee7;
+}
+
+.join-box {
+    background: var(--dark);
+    border-radius: 14px;
+    color: white;
+    padding: 55px 25px;
+    text-align: center;
+}
+
+.join-box h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(30px, 5vw, 43px);
+    margin-bottom: 15px;
+}
+
+.join-box p {
+    max-width: 600px;
+    color: #d0ded5;
+    margin: 0 auto 25px;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+    background: #041711;
+    color: #d2dfd6;
+    padding: 35px 0;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-brand {
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+}
+
+.footer-brand span {
+    color: var(--gold);
+}
+
+.footer-links {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    font-size: 13px;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #244034;
+    margin-top: 25px;
+    padding-top: 20px;
+    font-size: 12px;
+    color: #9eafa4;
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== MOBILE RESPONSIVENESS ===== */
+
+@media (max-width: 800px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: var(--dark);
+        padding: 20px 5%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        border-top: 1px solid #244034;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 12px 0;
+    }
+
+    .nav-links .join-btn {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .activity-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    section {
+        padding: 65px 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .hero {
+        min-height: 530px;
+    }
+
+    .hero-content {
+        padding: 65px 0;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .activity-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        min-height: 170px;
+    }
+
+    .values {
+        gap: 7px;
+    }
+
+    .value {
+        padding: 12px 5px;
+    }
+
+    .value strong {
+        font-size: 14px;
+    }
+
+    .value small {
+        font-size: 11px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+
+<header>
+    <nav class="container">
+
+        <a href="#home" class="logo">
+            BRIGHT <span>ENGLISH CLUB</span>
+        </a>
+
+        <button
+            class="menu-btn"
+            id="menuBtn"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="navLinks">
+            ☰
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#activities">Activities</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact" class="join-btn">Join Our Club</a></li>
+        </ul>
+
+    </nav>
+</header>
+
+<!-- ===== HOME ===== -->
+
+<main>
+
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content">
+
+            <div class="eyebrow">Welcome to Bright English Club</div>
+
+            <h1>
+                Find Your Voice.<br>
+                <span>Lead the Future.</span>
+            </h1>
+
+            <p>
+                A place where ideas grow, confidence rises, and
+                communication becomes a lifelong strength.
+                Learn English through speaking, creativity,
+                teamwork, and meaningful experiences.
+            </p>
+
+            <div class="buttons">
+                <a href="#about" class="btn btn-primary">
+                    Discover Our Club →
+                </a>
+
+                <a href="#activities" class="btn btn-outline">
+                    Explore Activities
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+
+<section id="about">
+    <div class="container">
+
+        <div class="section-heading">
+            <div class="eyebrow">Who We Are</div>
+            <h2>More Than an English Club</h2>
+            <p>
+                We believe that language is not just something
+                you learn. It is something you live.
+            </p>
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-art">
+                <div class="big-quote">“</div>
+                <h3>Speak. Lead. Inspire.</h3>
+                <p>Where learning truly shines bright.</p>
+            </div>
+
+            <div class="about-text">
+
+                <h3>Empowering Voices, Inspiring Minds</h3>
+
+                <p>
+                    Bright English Club empowers learners to master
+                    English with confidence through speaking,
+                    writing, and creative activities.
+                </p>
+
+                <p>
+                    We create opportunities for students to express
+                    their ideas, develop leadership skills, think
+                    critically, and become confident communicators.
+                </p>
+
+                <p>
+                    Through collaboration and practice, we aim to
+                    build a community where every voice matters.
+                </p>
+
+                <div class="values">
+
+                    <div class="value">
+                        <strong>Confidence</strong>
+                        <small>Find your voice</small>
+                    </div>
+
+                    <div class="value">
+                        <strong>Creativity</strong>
+                        <small>Think differently</small>
+                    </div>
+
+                    <div class="value">
+                        <strong>Leadership</strong>
+                        <small>Inspire others</small>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ACTIVITIES ===== -->
+
+<section class="activities" id="activities">
+    <div class="container">
+
+        <div class="section-heading">
+            <div class="eyebrow">Learn by Doing</div>
+            <h2>What We Do</h2>
+            <p>
+                Real experiences that help students communicate,
+                collaborate, and grow.
+            </p>
+        </div>
+
+        <div class="activity-grid">
+
+            <article class="activity-card">
+                <div class="activity-icon">🎙️</div>
+                <h3>Public Speaking</h3>
+                <p>
+                    Develop confidence and learn to express
+                    your ideas clearly before an audience.
+                </p>
+            </article>
+
+            <article class="activity-card">
+                <div class="activity-icon">⚖️</div>
+                <h3>Debate</h3>
+                <p>
+                    Build critical thinking, logical reasoning,
+                    respectful disagreement, and persuasion.
+                </p>
+            </article>
+
+            <article class="activity-card">
+                <div class="activity-icon">📺</div>
+                <h3>TV Talk Shows</h3>
+                <p>
+                    Experience interviews, discussions, and
+                    spontaneous conversations in English.
+                </p>
+            </article>
+
+            <article class="activity-card">
+                <div class="activity-icon">📰</div>
+                <h3>News Presentation</h3>
+                <p>
+                    Practise presenting news with clarity,
+                    confidence, and professional delivery.
+                </p>
+            </article>
+
+            <article class="activity-card">
+                <div class="activity-icon">🔤</div>
+                <h3>Phonetics</h3>
+                <p>
+                    Improve pronunciation, speech clarity,
+                    listening skills, and sound awareness.
+                </p>
+            </article>
+
+            <article class="activity-card">
+                <div class="activity-icon">🎭</div>
+                <h3>Creative Activities</h3>
+                <p>
+                    Explore storytelling, presentations,
+                    word games, and collaborative challenges.
+                </p>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- ===== MOTTO ===== -->
+
+<section class="motto">
+    <div class="container">
+
+        <div class="eyebrow">Our Guiding Principle</div>
+
+        <h2>
+            Speak. <span>Lead.</span> Inspire.
+        </h2>
+
+        <p>
+            Three powerful words. One inspiring journey.
+        </p>
+
+    </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+
+<section id="gallery">
+    <div class="container">
+
+        <div class="section-heading">
+            <div class="eyebrow">Our Experiences</div>
+            <h2>Moments That Matter</h2>
+            <p>
+                Every activity is an opportunity to learn,
+                connect, and become a better communicator.
+            </p>
+        </div>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <span>🎤</span>
+                <h3>Speaking Sessions</h3>
+                <p>Express yourself with confidence.</p>
+            </div>
+
+            <div class="gallery-item">
+                <span>🏆</span>
+                <h3>Competitions</h3>
+                <p>Challenge yourself and grow.</p>
+            </div>
+
+            <div class="gallery-item">
+                <span>🤝</span>
+                <h3>Teamwork</h3>
+                <p>Learn and achieve together.</p>
+            </div>
+
+        </div>
+
+        <p style="text-align:center; margin-top:22px; color:#657168;">
+            Event photographs can be added to this section later.
+        </p>
+
+    </div>
+</section>
+
+<!-- ===== JOIN ===== -->
+
+<section class="join-section" id="contact">
+    <div class="container">
+
+        <div class="join-box">
+
+            <div class="eyebrow">Your Journey Starts Here</div>
+
+            <h2>Ready to Find Your Voice?</h2>
+
+            <p>
+                Step forward, share your ideas, develop your
+                communication skills, and become part of a
+                community that inspires growth.
+            </p>
+
+            <a href="#about" class="btn btn-primary">
+                Explore Bright English Club
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+
+<footer>
+    <div class="container">
+
+        <div class="footer-content">
+
+            <div>
+                <div class="footer-brand">
+                    BRIGHT <span>ENGLISH CLUB</span>
+                </div>
+
+                <small>Speak. Lead. Inspire.</small>
+            </div>
+
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#activities">Activities</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © <span id="year"></span> Bright English Club.
+            All rights reserved.
+        </div>
+
+    </div>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", function () {
+    const isOpen = navLinks.classList.toggle("active");
+
+    menuBtn.setAttribute("aria-expanded", isOpen);
+    menuBtn.textContent = isOpen ? "✕" : "☰";
+});
+
+document.querySelectorAll("#navLinks a").forEach(function (link) {
+    link.addEventListener("click", function () {
+        navLinks.classList.remove("active");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.textContent = "☰";
+    });
+});
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+  </html>
